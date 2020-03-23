@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Meals App',
       theme: ThemeData(
         primarySwatch: Colors.pink,
@@ -29,9 +30,9 @@ class MyApp extends StatelessWidget {
             ),
       ),
       home: CategoriesScreen(),
-//      routes: {
-//        '/category-meeals': (ctx) => CategoryMealsScreen(),
-//      },
+      routes: {
+        '/category-meeals': (ctx) => CategoryMealsScreen(),
+      },
     );
   }
 }
