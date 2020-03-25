@@ -15,6 +15,16 @@ class MealItem extends StatelessWidget {
       @required this.complexity,
       @required this.affordability});
 
+  String get complexityText {
+    if (complexity == Complexity.Simple) {
+      return 'Simple';
+    } else if (complexity == Complexity.Hard) {
+      return 'Hard';
+    } else {
+      return 'Challenging';
+    }
+  }
+
   void selectedRecipe() {}
   @override
   Widget build(BuildContext context) {
@@ -61,6 +71,31 @@ class MealItem extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Icon(Icons.schedule),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text('$duration min'),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Icon(Icons.work),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text('$complexityText'),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
