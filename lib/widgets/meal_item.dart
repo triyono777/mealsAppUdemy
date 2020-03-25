@@ -16,12 +16,34 @@ class MealItem extends StatelessWidget {
       @required this.affordability});
 
   String get complexityText {
-    if (complexity == Complexity.Simple) {
-      return 'Simple';
-    } else if (complexity == Complexity.Hard) {
-      return 'Hard';
-    } else {
-      return 'Challenging';
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+        break;
+      case Complexity.Hard:
+        return 'Hard';
+        break;
+      case Complexity.Challenging:
+        return 'Challenging';
+        break;
+      default:
+        return 'Unknown';
+    }
+  }
+
+  String get affordabilityText {
+    switch (affordability) {
+      case Affordability.Affordable:
+        return 'Affordable';
+        break;
+      case Affordability.Luxurious:
+        return 'Luxurius';
+        break;
+      case Affordability.Pricey:
+        return 'Pricey';
+        break;
+      default:
+        return 'Unknown';
     }
   }
 
@@ -75,6 +97,7 @@ class MealItem extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
@@ -92,6 +115,15 @@ class MealItem extends StatelessWidget {
                         width: 6,
                       ),
                       Text('$complexityText'),
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Icon(Icons.attach_money),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text('$affordabilityText'),
                     ],
                   ),
                 ],
