@@ -20,6 +20,12 @@ class MealDetailScreen extends StatelessWidget {
               selectedMeal.imageUrl,
               fit: BoxFit.cover,
             ),
+          ),
+          Container(
+            child: Text(
+              'Ingredients',
+              style: Theme.of(context).textTheme.title,
+            ),
           )
         ],
       ),
